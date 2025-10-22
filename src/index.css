@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Couleurs principales Patrick Travel Services */
+    --background: 0 0% 100%;
+    --foreground: 210 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 15%;
+
+    /* Bleu navy - Confiance et professionnalisme */
+    --primary: 210 60% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 50% 35%;
+    --primary-dark: 210 70% 15%;
+
+    /* Vert vif - Voyage et croissance */
+    --secondary: 90 70% 55%;
+    --secondary-foreground: 210 50% 15%;
+    --secondary-light: 90 65% 65%;
+    --secondary-dark: 90 75% 45%;
+
+    /* Bleu ciel - International */
+    --accent: 200 95% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 200 90% 60%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 20% 40%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 60% 25%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 60% 25%), hsl(200 95% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    --gradient-success: linear-gradient(135deg, hsl(90 70% 55%), hsl(90 75% 45%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(210 60% 25% / 0.05);
+    --shadow-md: 0 4px 16px hsl(210 60% 25% / 0.08);
+    --shadow-lg: 0 8px 32px hsl(210 60% 25% / 0.12);
+    --shadow-glow: 0 0 40px hsl(200 95% 50% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 210 50% 15%;
+    --sidebar-primary: 210 60% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 95%;
+    --sidebar-accent-foreground: 210 50% 15%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 200 95% 50%;
+  }
+
+  .dark {
+    --background: 210 50% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 45% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 45% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 200 95% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 200 90% 60%;
+    --primary-dark: 200 98% 40%;
+
+    --secondary: 90 70% 55%;
+    --secondary-foreground: 210 50% 5%;
+    --secondary-light: 90 65% 65%;
+    --secondary-dark: 90 75% 45%;
+
+    --accent: 210 60% 35%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 210 55% 45%;
+
+    --muted: 210 40% 15%;
+    --muted-foreground: 210 20% 65%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 18%;
+    --input: 210 40% 18%;
+    --ring: 200 95% 50%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(210 50% 15%), hsl(200 95% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(210 45% 8%), hsl(210 50% 10%));
+    --gradient-success: linear-gradient(135deg, hsl(90 70% 55%), hsl(90 75% 45%));
+
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(200 95% 50% / 0.4);
+
+    --sidebar-background: 210 50% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 200 95% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 40% 18%;
+    --sidebar-ring: 200 95% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
