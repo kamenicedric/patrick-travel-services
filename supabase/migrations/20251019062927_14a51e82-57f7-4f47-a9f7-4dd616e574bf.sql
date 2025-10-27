@@ -1,3 +1,7 @@
+
+
+
+
 -- Créer les types enum
 CREATE TYPE public.app_role AS ENUM ('admin', 'client');
 CREATE TYPE public.dossier_status AS ENUM ('en_attente', 'en_cours', 'approuve', 'rejete', 'complete');

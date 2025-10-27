@@ -9,6 +9,7 @@ import logo from "@/assets/logo.jpg";
 import CreateDossierDialog from "../dossiers/CreateDossierDialog";
 import DossierCard from "../dossiers/DossierCard";
 import DossierDetails from "../dossiers/DossierDetails";
+import { ImmigrationAssistant } from "@/components/chat/ImmigrationAssistant";
 
 const ClientDashboard = ({ user }: { user: any }) => {
   const navigate = useNavigate();
@@ -114,6 +115,9 @@ const ClientDashboard = ({ user }: { user: any }) => {
           </div>
         )}
       </main>
+
+      {/* AI Assistant */}
+      <ImmigrationAssistant />
     </div>
   );
 };
