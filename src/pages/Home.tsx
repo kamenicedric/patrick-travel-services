@@ -141,7 +141,7 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section id="Accueil" className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero opacity-5"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -162,7 +162,7 @@ const Home = () => {
       </section>
 
       {/* À Propos */}
-      <section className="py-20 bg-muted/30">
+      <section id="À Propos" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-bold mb-6">À Propos de Patrick Travel Services</h2>
@@ -331,7 +331,7 @@ const Home = () => {
       </section>
 
       {/* Services */}
-      <section className="py-16 bg-background">
+      <section id="Nos Services" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Nos Services</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -491,8 +491,8 @@ const Home = () => {
             <div>
               <h3 className="font-semibold text-lg mb-4">Liens Rapides</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Accueil</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">À Propos</a></li>
+                <li><a href="#Accueil" className="hover:text-primary transition-colors">Accueil</a></li>
+                <li><a href="#À Propos " className="hover:text-primary transition-colors">À Propos</a></li>
                 <li><a href="#destinations" className="hover:text-primary transition-colors scroll-smooth">Destinations</a></li>
                 <li><a href="/auth" className="hover:text-primary transition-colors">Mon Espace Client</a></li>
                 <li><a href="#faq" className="hover:text-primary transition-colors scroll-smooth">FAQ</a></li>
@@ -503,11 +503,11 @@ const Home = () => {
             <div>
               <h3 className="font-semibold text-lg mb-4">Nos Services</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Assistance Visa</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Billets d'Avion</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Réservation Hôtel</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Assurance Voyage</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Traduction & Légalisation</a></li>
+                <li><a href="#Nos Services" className="hover:text-primary transition-colors">Assistance Visa</a></li>
+                <li><a href="#Nos Services" className="hover:text-primary transition-colors">Billets d'Avion</a></li>
+                <li><a href="#Nos Services" className="hover:text-primary transition-colors">Réservation Hôtel</a></li>
+                <li><a href="#Nos Services" className="hover:text-primary transition-colors">Assurance Voyage</a></li>
+                <li><a href="#Nos Services" className="hover:text-primary transition-colors">Traduction & Légalisation</a></li>
               </ul>
             </div>
 
