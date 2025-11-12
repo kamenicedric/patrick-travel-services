@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plane, FileText, MessageSquare, Shield, CheckCircle, Users, TrendingUp, Globe, MapPin, Hotel, FileCheck, Languages, Stamp, HeartHandshake } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
@@ -160,8 +161,42 @@ const Home = () => {
         </div>
       </section>
 
+      {/* À Propos */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold mb-6">À Propos de Patrick Travel Services</h2>
+            <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground">
+              <p>
+                <strong className="text-foreground">Patrick Travel Services</strong> est votre partenaire de confiance pour toutes vos démarches d'immigration et de voyage. Basés à Douala au Cameroun, nous mettons notre expertise au service de vos projets internationaux depuis de nombreuses années.
+              </p>
+              <p>
+                Notre mission est de simplifier vos procédures administratives et de vous accompagner à chaque étape de votre parcours migratoire. Que vous souhaitiez étudier, travailler ou vous installer à l'étranger, notre équipe d'experts vous guide avec professionnalisme et dévouement.
+              </p>
+              <p>
+                Nous offrons un accompagnement personnalisé incluant l'assistance visa, la réservation de billets d'avion, l'hébergement, l'assurance voyage, la traduction et la légalisation de documents. Notre plateforme sécurisée vous permet de suivre votre dossier en temps réel et de communiquer directement avec nos conseillers.
+              </p>
+              <div className="flex items-center justify-center gap-8 pt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary">100+</div>
+                  <div className="text-sm">Clients Satisfaits</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary">15+</div>
+                  <div className="text-sm">Pays Couverts</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary">98%</div>
+                  <div className="text-sm">Taux de Réussite</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pays facilitant l'immigration */}
-      <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+      <section id="destinations" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
@@ -336,41 +371,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
-      {/* À Propos */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl font-bold mb-6">À Propos de Patrick Travel Services</h2>
-            <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground">
-              <p>
-                <strong className="text-foreground">Patrick Travel Services</strong> est votre partenaire de confiance pour toutes vos démarches d'immigration et de voyage. Basés à Douala au Cameroun, nous mettons notre expertise au service de vos projets internationaux depuis de nombreuses années.
-              </p>
-              <p>
-                Notre mission est de simplifier vos procédures administratives et de vous accompagner à chaque étape de votre parcours migratoire. Que vous souhaitiez étudier, travailler ou vous installer à l'étranger, notre équipe d'experts vous guide avec professionnalisme et dévouement.
-              </p>
-              <p>
-                Nous offrons un accompagnement personnalisé incluant l'assistance visa, la réservation de billets d'avion, l'hébergement, l'assurance voyage, la traduction et la légalisation de documents. Notre plateforme sécurisée vous permet de suivre votre dossier en temps réel et de communiquer directement avec nos conseillers.
-              </p>
-              <div className="flex items-center justify-center gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">100+</div>
-                  <div className="text-sm">Clients Satisfaits</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">15+</div>
-                  <div className="text-sm">Pays Couverts</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">98%</div>
-                  <div className="text-sm">Taux de Réussite</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       {/* Témoignages */}
       <section className="py-16">
@@ -404,6 +404,57 @@ const Home = () => {
                 <p className="text-muted-foreground italic">"{testimonial.text}"</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-muted/30 scroll-mt-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Questions Fréquentes</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Trouvez les réponses aux questions les plus courantes sur nos services
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: "Quels pays couvrez-vous pour l'immigration ?",
+                  answer: "Nous accompagnons nos clients dans leurs démarches d'immigration vers tous les pays du monde. Notre équipe d'experts est spécialisée dans les procédures de nombreux pays, que ce soit pour des visas d'études, de travail, touristiques ou de résidence permanente."
+                },
+                {
+                  question: "Combien de temps prend le traitement d'un dossier ?",
+                  answer: "Le délai de traitement varie selon le type de visa et le pays de destination. En moyenne, comptez entre 2 à 12 semaines. Nous vous tenons informé à chaque étape et faisons notre maximum pour accélérer le processus."
+                },
+                {
+                  question: "Quels documents sont nécessaires ?",
+                  answer: "Les documents requis varient selon votre destination et le type de visa. Une fois votre dossier créé, vous recevrez une checklist personnalisée avec tous les documents nécessaires. Notre équipe vous accompagne dans la préparation de chaque document."
+                },
+                {
+                  question: "Comment puis-je suivre l'avancement de mon dossier ?",
+                  answer: "Vous pouvez suivre votre dossier en temps réel depuis votre espace client. Vous recevez également des notifications par email et pouvez échanger directement avec nos conseillers via la messagerie intégrée."
+                },
+                {
+                  question: "Quels sont vos tarifs ?",
+                  answer: "Nos tarifs dépendent du type de service et du pays de destination. Contactez-nous pour obtenir un devis personnalisé gratuit. Nous offrons des forfaits complets incluant l'assistance visa, les billets d'avion et l'hébergement."
+                },
+                {
+                  question: "Que se passe-t-il si mon visa est refusé ?",
+                  answer: "En cas de refus, nous analysons les raisons et vous conseillons sur les options disponibles : recours, nouvelle demande avec documents complémentaires, ou orientation vers une alternative adaptée à votre situation."
+                }
+              ].map((faq, idx) => (
+                <AccordionItem key={idx} value={`item-${idx}`} className="border rounded-lg px-6 bg-card hover-scale">
+                  <AccordionTrigger className="hover:no-underline">
+                    <h3 className="text-lg font-semibold text-left">{faq.question}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
@@ -442,9 +493,9 @@ const Home = () => {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="#" className="hover:text-primary transition-colors">Accueil</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">À Propos</a></li>
-                <li><a href="#destinations" className="hover:text-primary transition-colors">Destinations</a></li>
+                <li><a href="#destinations" className="hover:text-primary transition-colors scroll-smooth">Destinations</a></li>
                 <li><a href="/auth" className="hover:text-primary transition-colors">Mon Espace Client</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">FAQ</a></li>
+                <li><a href="#faq" className="hover:text-primary transition-colors scroll-smooth">FAQ</a></li>
               </ul>
             </div>
 

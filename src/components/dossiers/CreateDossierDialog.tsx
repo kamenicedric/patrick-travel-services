@@ -11,13 +11,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select,
+   SelectContent,
+    SelectItem,
+     SelectTrigger,
+      SelectValue } from "@/components/ui/select";
+
 import { Plus } from "lucide-react";
 import { toast } from "sonner";
 
@@ -87,25 +86,20 @@ const CreateDossierDialog = ({ onDossierCreated }: CreateDossierDialogProps) => 
               required
             />
           </div>
-          <div>
+                    <div>
             <Label htmlFor="pays_destination">Pays de destination *</Label>
-            <Select
+            <Input
+              id="pays_destination"
               value={formData.pays_destination}
-              onValueChange={(value) => setFormData({ ...formData, pays_destination: value })}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Sélectionner un pays" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Canada">Canada</SelectItem>
-                <SelectItem value="France">France</SelectItem>
-                <SelectItem value="USA">États-Unis</SelectItem>
-                <SelectItem value="UK">Royaume-Uni</SelectItem>
-                <SelectItem value="Allemagne">Allemagne</SelectItem>
-                <SelectItem value="Australie">Australie</SelectItem>
-              </SelectContent>
-            </Select>
+              onChange={(e) => setFormData({ ...formData, pays_destination: e.target.value })}
+              placeholder="Ex: Canada, France, Japon, Brésil..."
+              required
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Nous accompagnons l'immigration vers tous les pays du monde
+            </p>
           </div>
+
           <div>
             <Label htmlFor="type_visa">Type de visa *</Label>
             <Select
